@@ -1,0 +1,43 @@
+// Variaveis do grid
+
+$cols: 12;
+$gutter: 20px;
+$l-device: 1200px;
+$m-device: 760px;
+$s-device: 480px;
+
+// box-sizing
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+// Mixin de media-querie
+
+@mixin d($size) {
+    @if $size == l {
+        @media screen  and (min-width: #{$l-device}) {
+            @content;
+        }
+    }
+    @else if $size == m {
+        @media screen and (min-width: #{$m-device}) and (max-width: $l-device - 1) {
+            @content;
+        }
+    }
+    @else if $size == s {
+        @media screen and (max-width: $m-device - 1) {
+            @content;
+        }
+    }
+}
+
+p {
+    color: blue;
+    @include d(m) {
+        color: pink;
+    }
+    @include d(s) {
+        color: aqua;
+    }
+}
