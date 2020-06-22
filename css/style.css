@@ -19,51 +19,51 @@ p {
 }
 
 .grid-1 {
-  width: calc(8.33333% - gutter);
+  width: calc(8.33333% - 20px);
 }
 
 .grid-2 {
-  width: calc(16.66667% - gutter);
+  width: calc(16.66667% - 20px);
 }
 
 .grid-3 {
-  width: calc(25% - gutter);
+  width: calc(25% - 20px);
 }
 
 .grid-4 {
-  width: calc(33.33333% - gutter);
+  width: calc(33.33333% - 20px);
 }
 
 .grid-5 {
-  width: calc(41.66667% - gutter);
+  width: calc(41.66667% - 20px);
 }
 
 .grid-6 {
-  width: calc(50% - gutter);
+  width: calc(50% - 20px);
 }
 
 .grid-7 {
-  width: calc(58.33333% - gutter);
+  width: calc(58.33333% - 20px);
 }
 
 .grid-8 {
-  width: calc(66.66667% - gutter);
+  width: calc(66.66667% - 20px);
 }
 
 .grid-9 {
-  width: calc(75% - gutter);
+  width: calc(75% - 20px);
 }
 
 .grid-10 {
-  width: calc(83.33333% - gutter);
+  width: calc(83.33333% - 20px);
 }
 
 .grid-11 {
-  width: calc(91.66667% - gutter);
+  width: calc(91.66667% - 20px);
 }
 
 .grid-12 {
-  width: calc(100% - gutter);
+  width: calc(100% - 20px);
 }
 
 [class^="grid-"] {
@@ -151,12 +151,31 @@ p {
 @media screen and (max-width: 759px) {
   .container {
     max-width: 480px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 .container::after, .container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.row {
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+@media screen and (max-width: 759px) {
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.row::after, .row::before {
   content: '';
   display: table;
   clear: both;
