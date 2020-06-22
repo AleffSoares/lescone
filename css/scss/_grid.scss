@@ -32,15 +32,7 @@ $s-device: 480px;
     }
 }
 
-p {
-    color: blue;
-    @include d(m) {
-        color: pink;
-    }
-    @include d(s) {
-        color: aqua;
-    }
-}
+
 
 // Função do  grid
 
